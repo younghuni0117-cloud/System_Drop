@@ -1,0 +1,10 @@
+{
+  "success": true,
+  "tests_passed": 182,
+  "normal_startup_existing_libraries": true,
+  "offline_startup_existing_libraries": true,
+  "real_qt_gui_startup_and_exit": true,
+  "isolated_argparse_regression": true,
+  "windows_native_execution": false,
+  "new_dependencies": []
+}

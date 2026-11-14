@@ -1,6 +1,23 @@
 # System Drop
 
-## v0.12.0 — 결과 창 개선 업데이트
+## v0.12.1 — `unrecognized arguments: --gui` 시작 오류 수정
+
+**[최신 v0.12.1 누적 업데이트 ZIP 다운로드 — 약 188 KB](https://github.com/younghuni0117-cloud/System_Drop/raw/refs/heads/main/downloads/system_drop_v0.12.1_update.zip)**
+
+v0.11.0 / v0.11.1 / v0.12.0에 적용합니다. v0.12.0 결과 창 개선과 이전 시작 경로 수정도 모두 포함합니다. 다른 패치를 먼저 적용할 필요가 없습니다.
+
+1. Manager와 결과 창을 닫습니다.
+2. ZIP 전체를 임시 폴더에 압축 해제합니다.
+3. **apply_update.bat**을 실행하고, **기존 start_windows.bat이 있는 system_drop 폴더**를 선택합니다.
+4. 완료 후 기존 start_windows.bat을 실행합니다.
+
+내부 실행 인수 --gui가 GUI의 인수 파서로 넘어가지 않게 수정했습니다. 기존 모델·결과·설정·솔버·라이브러리는 유지합니다. 변경 파일은 backups 폴더에 먼저 백업합니다.
+
+자동 테스트 **182개 통과**. 실제 Linux Qt 환경에서 일반/오프라인 부트스트랩 → 기존 라이브러리 재사용 → GUI 창 생성 → 정상 종료를 모두 확인했습니다. 실제 Windows 실행은 미검증입니다. [변경 내용과 수동 적용](updates/v0.12.1/CHANGES.md).
+
+---
+
+## 이전 v0.12.0 — 최신 v0.12.1에 포함
 
 **[v0.12.0 업데이트 ZIP 다운로드 — 약 185 KB](https://github.com/younghuni0117-cloud/System_Drop/raw/refs/heads/main/downloads/system_drop_v0.12.0_update.zip)**
 
@@ -34,7 +51,7 @@ v0.11.0 실행 중 **No module named 'offline_setup'** 오류가 발생하면 �
 2. 안의 파일과 폴더를 **기존 start_windows.bat이 있는 system_drop 폴더**에 복사하고 덮어쓰세요.
 3. 기존 폴더를 삭제하지 말고 병합하세요. 다시 start_windows.bat을 실행하세요.
 
-363 MB 배포본을 다시 받을 필요는 없습니다. 라이브러리·솔버·runs는 삭제하거나 강제 재설치하지 않습니다. 처음 설치할 때는 아래 기본 배포본을 받은 뒤 최신 v0.12.0 업데이트를 적용하세요.
+363 MB 배포본을 다시 받을 필요는 없습니다. 라이브러리·솔버·runs는 삭제하거나 강제 재설치하지 않습니다. 처음 설치할 때는 아래 기본 배포본을 받은 뒤 최신 v0.12.1 업데이트를 적용하세요.
 
 격리 모드에서 기존 오류 재현 및 수정 확인, 자동 테스트 **174개 통과**. 실제 Windows 실행은 미검증입니다.
 
