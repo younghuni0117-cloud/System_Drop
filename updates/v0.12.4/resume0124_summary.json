@@ -1,0 +1,24 @@
+{
+  "success": true,
+  "solver_rerun": false,
+  "actual_completed_run": "/workspace/system_drop/artifacts/time_settings_review/case_01/doe_calculix_261114_r01",
+  "resume_folder": "/workspace/system_drop/artifacts/resume0124/doe_calculix_261114_r01",
+  "raw_files_unchanged": true,
+  "records": [
+    {
+      "setup": "done",
+      "drop": "done",
+      "release": "pending"
+    }
+  ],
+  "elapsed_s": 9.050453035997634,
+  "conversion": {
+    "mode": "streamed_index_then_selected_frames",
+    "raw_frames": 258,
+    "dat_frames": 258,
+    "saved_frames": 10,
+    "frd_bytes": 40888910,
+    "dat_bytes": 78569040,
+    "all_raw_values_validated": true
+  }
+}

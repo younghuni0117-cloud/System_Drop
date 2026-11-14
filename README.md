@@ -1,106 +1,40 @@
 # System Drop
 
-## v0.12.3 — CalculiX Windows 실행 환경·충돌 진단
+Windows용 누적 낙하 해석 Manager. CalculiX / Abaqus 입력과 PyVista 결과창을 제공합니다.
+배포는 **기본 오프라인 설치본 + 작은 누적 업데이트** 방식입니다.
 
-**[최신 v0.12.3 누적 업데이트 ZIP 다운로드 — 약 199 KB](https://github.com/younghuni0117-cloud/System_Drop/raw/refs/heads/main/downloads/system_drop_v0.12.3_update.zip)**
+## 최신 v0.12.4 업데이트 — MemoryError 개선
 
-동봉 Windows 솔버의 원본 시작 환경에서 지정한 **강성 조립 스레드 1개** 설정을 반영했습니다. 결과 계산 CPU 수는 GUI 값을 사용합니다. 기본 CPU 4개는 유지합니다.
+**[v0.12.4 누적 업데이트 ZIP 다운로드 · 약 210 KB](https://github.com/younghuni0117-cloud/System_Drop/raw/refs/heads/main/downloads/system_drop_v0.12.4_update.zip)**
 
-Windows 접근 위반(0xC0000005) 등을 구분하고, 실패한 단계에 **solver_failure_report.json**을 저장합니다. 이 파일에는 조건·실제 스레드 설정·입력과 실행 파일/DLL 해시·마지막 시간·출력 크기를 기록합니다.
+대용량 FRD/DAT 전체 이력을 RAM에 올리던 결과 변환 구조를 바꾸었습니다.
+원본을 순차 검사한 뒤 필요한 실제 프레임만 한 프레임씩 읽고 저장합니다.
+버튼은 결과 변환(XX%)와 최종 검증 중을 표시합니다.
 
-**사용자의 Windows 접근 위반 원인은 아직 확정하지 못했습니다.** Linux에서 같은 최대 증분 0.00001초 / 종료 0.001초를 CPU 1개·4개로 완료했지만, 장시간 시험은 출력 빈도를 줄인 진단용이며 Windows 실행 파일 검증을 대신하지 않습니다.
-
-1. Manager와 결과창을 닫습니다. 다른 계산이 진행 중이면 현재 단계 완료 후 일시정지합니다.
-2. ZIP 전체를 임시 폴더에 풀고 apply_update.bat 실행 → 기존 start_windows.bat 폴더 선택.
-3. 다시 실행 → 이전 실행 폴더 열기 / 재개 → **CPU 1개로 변경**.
-4. 다른 조건을 유지하고 실패한 낙하만 다시 계산합니다. 완료된 단계는 유지합니다.
-
-자동 테스트 **189개 통과**. [변경 내용·비교 시험·검증 범위](updates/v0.12.3/CHANGES.md). 새 라이브러리/솔버 설치는 없고 이전 패치도 모두 포함합니다.
-
----
-
-## 이전 v0.12.2 — 최신 패치에 포함
-
-**[최신 v0.12.2 누적 업데이트 ZIP 다운로드 — 약 193 KB](https://github.com/younghuni0117-cloud/System_Drop/raw/refs/heads/main/downloads/system_drop_v0.12.2_update.zip)**
-
-`ModuleNotFoundError: No module named 'system_drop'`로 결과창이 종료되는 오류를 수정했습니다. 프로그램을 이동하거나 이전 설치의 Python 환경을 재사용할 때에도 현재 프로그램의 결과창을 찾도록 보완했습니다.
-
-1. 해석 중이면 **현재 단계 완료 후 일시정지**하고 실제 대기 상태를 확인합니다.
-2. Manager와 결과창을 닫습니다.
-3. ZIP 전체를 임시 폴더에 풀고 **apply_update.bat** 실행.
-4. **기존 start_windows.bat이 있는 system_drop 폴더** 선택.
-5. 기존 프로그램을 다시 실행하고 필요하면 **이전 실행 폴더 열기 / 재개**로 doe 폴더를 엽니다.
-
-v0.11.0부터 v0.12.1까지 적용할 수 있는 누적 패치입니다. 이전 개선과 수정도 포함하며 라이브러리·솔버를 다시 설치하지 않습니다. 기존 INP·설정·결과는 유지하고 변경 소스만 백업합니다.
-
-자동 테스트 **184개 통과**, 격리 Python에서 실제 Qt/VTK 결과창 5개 경로 기동 확인. 실제 Windows 실행은 미검증입니다. [변경·검증·적용 안내](updates/v0.12.2/CHANGES.md).
-
----
-
-## 이전 v0.12.1 — 최신 v0.12.2에 포함
-
-**[최신 v0.12.1 누적 업데이트 ZIP 다운로드 — 약 188 KB](https://github.com/younghuni0117-cloud/System_Drop/raw/refs/heads/main/downloads/system_drop_v0.12.1_update.zip)**
-
-v0.11.0 / v0.11.1 / v0.12.0에 적용합니다. v0.12.0 결과 창 개선과 이전 시작 경로 수정도 모두 포함합니다. 다른 패치를 먼저 적용할 필요가 없습니다.
-
-1. Manager와 결과 창을 닫습니다.
+1. Manager와 결과창을 닫습니다. 별도 계산이 진행 중이면 현재 단계 완료 후 일시정지합니다.
 2. ZIP 전체를 임시 폴더에 압축 해제합니다.
-3. **apply_update.bat**을 실행하고, **기존 start_windows.bat이 있는 system_drop 폴더**를 선택합니다.
-4. 완료 후 기존 start_windows.bat을 실행합니다.
+3. **apply_update.bat** 실행 → **기존 start_windows.bat이 있는 system_drop 폴더** 선택.
+4. 기존 start_windows.bat으로 실행합니다.
 
-내부 실행 인수 --gui가 GUI의 인수 파서로 넘어가지 않게 수정했습니다. 기존 모델·결과·설정·솔버·라이브러리는 유지합니다. 변경 파일은 backups 폴더에 먼저 백업합니다.
+v0.11.0 이후의 이전 패치를 모두 포함합니다. 기존 INP·설정·runs·라이브러리·솔버를 유지하며 변경 소스는 backups 폴더에 먼저 백업합니다. 추가 패키지 설치는 없습니다.
 
-자동 테스트 **182개 통과**. 실제 Linux Qt 환경에서 일반/오프라인 부트스트랩 → 기존 라이브러리 재사용 → GUI 창 생성 → 정상 종료를 모두 확인했습니다. 실제 Windows 실행은 미검증입니다. [변경 내용과 수동 적용](updates/v0.12.1/CHANGES.md).
+### 솔버 완료 후 변환만 실패했다면
 
----
+**FRD/DAT/job.rout/solver_completed.json을 포함한 doe 폴더 전체를 보존**하세요.
+업데이트 후 **이전 실행 폴더 열기 / 재개**로 실패한 doe를 열고 자동 실행 또는 실패 단계 버튼을 누릅니다.
+원본 해시·완료 상태가 확인되면 **솔버를 재실행하지 않고 변환부터 복구**합니다.
+[자세한 복구·변경·검증 안내](updates/v0.12.4/CHANGES.md).
 
-## 이전 v0.12.0 — 최신 v0.12.1에 포함
+자동 테스트 **197개 통과**. 실제 약 500MB 결과에서 72개 배열과 최종 상태가 기존 결과와 완전히 일치했습니다.
+해당 Linux 시험의 최대 RSS는 약 69.5 MiB였습니다. 모델과 환경에 따라 메모리·시간은 달라집니다.
+[대용량 시험](updates/v0.12.4/streaming0124_summary.json) · [재계산 없는 복구 시험](updates/v0.12.4/resume0124_summary.json).
 
-**[v0.12.0 업데이트 ZIP 다운로드 — 약 185 KB](https://github.com/younghuni0117-cloud/System_Drop/raw/refs/heads/main/downloads/system_drop_v0.12.0_update.zip)**
+![변환 진행 표시](updates/v0.12.4/conversion_progress0124.png)
 
-기존 v0.11.0 / v0.11.1에 적용하는 누적 패치입니다. 시작 오류 수정도 포함하므로 이전 패치를 따로 적용할 필요는 없습니다. 새로운 라이브러리나 솔버 설치가 없습니다.
+## 최초 오프라인 설치 — 기본 v0.11.0
 
-1. Manager와 결과 창을 닫습니다.
-2. 업데이트 ZIP **전체**를 임시 폴더에 압축 해제합니다.
-3. **apply_update.bat**을 실행합니다.
-4. 선택 창에서 **기존 start_windows.bat이 있는 system_drop 폴더**를 선택합니다.
-5. 완료되면 기존 start_windows.bat을 실행합니다.
-
-변경 파일은 backups 폴더에 먼저 백업합니다. 기존 runs·사용자 INP 템플릿·라이브러리·솔버·설정은 유지합니다. Windows 업데이트 BAT/PowerShell은 이 개발 환경에서 실제 실행 미검증입니다. 수동 적용 방법은 [변경 내용](updates/v0.12.0/CHANGES.md)을 참고하세요.
-
-주요 변경: Max 박스/값만 표시, 전체 물리량 이름과 최대·최소 주응력, 입력 폭 개선, 기호 재생/멈춤, 클래식 마우스, 음영 조절·외곽선·흰 배경, 방향 모식도 개선.
-
-자동 테스트 **182개 통과**, 실제 Linux Qt/VTK UI와 GIF 프레임 간격 내보내기 확인. [검증 요약](updates/v0.12.0/viewer012_summary.json).
-
-![결과창](updates/v0.12.0/viewer_v012.png)
-
-![방향 모식도](updates/v0.12.0/directions_v012.png)
-
----
-
-## 이전 패치 v0.11.1 — v0.12.0에 포함
-
-v0.11.0 실행 중 **No module named 'offline_setup'** 오류가 발생하면 아래 패치를 적용하세요.
-
-**[시작 오류 수정 패치 ZIP 다운로드](https://github.com/younghuni0117-cloud/System_Drop/raw/refs/heads/main/downloads/system_drop_v0.11.1_startup_fix.zip)**
-
-1. 패치 ZIP을 임시 폴더에 압축 해제하세요.
-2. 안의 파일과 폴더를 **기존 start_windows.bat이 있는 system_drop 폴더**에 복사하고 덮어쓰세요.
-3. 기존 폴더를 삭제하지 말고 병합하세요. 다시 start_windows.bat을 실행하세요.
-
-363 MB 배포본을 다시 받을 필요는 없습니다. 라이브러리·솔버·runs는 삭제하거나 강제 재설치하지 않습니다. 처음 설치할 때는 아래 기본 배포본을 받은 뒤 최신 v0.12.3 업데이트를 적용하세요.
-
-격리 모드에서 기존 오류 재현 및 수정 확인, 자동 테스트 **174개 통과**. 실제 Windows 실행은 미검증입니다.
-
----
-
-## 기본 배포본 v0.11.0
-
-Windows용 누적 낙하 해석 매니저. CalculiX / Abaqus 템플릿과 PyVista 결과 뷰어를 제공합니다.
-
-## 오프라인용 다운로드
-
-GitHub 단일 파일 제한에 맞춰 원본 ZIP을 5개로 분할했습니다. **아래 6개 파일을 모두 같은 폴더에 원래 파일명 그대로 저장하세요.**
+GitHub 단일 파일 제한에 맞춘 363MB 원본 ZIP의 분할 파일입니다.
+아래 **분할 5개 + join_files.bat**을 모두 같은 폴더에 원래 파일명으로 저장하세요.
 
 - [분할 1 다운로드](https://github.com/younghuni0117-cloud/System_Drop/raw/refs/heads/main/downloads/system_drop_offline.zip.part001)
 - [분할 2 다운로드](https://github.com/younghuni0117-cloud/System_Drop/raw/refs/heads/main/downloads/system_drop_offline.zip.part002)
@@ -109,27 +43,20 @@ GitHub 단일 파일 제한에 맞춰 원본 ZIP을 5개로 분할했습니다. 
 - [분할 5 다운로드](https://github.com/younghuni0117-cloud/System_Drop/raw/refs/heads/main/downloads/system_drop_offline.zip.part005)
 - [join_files.bat 다운로드](https://github.com/younghuni0117-cloud/System_Drop/raw/refs/heads/main/downloads/join_files.bat)
 
-1. 분할 파일 5개와 `join_files.bat`을 같은 폴더에 저장합니다.
-2. `join_files.bat`을 실행하면 `system_drop_v0.11.0_windows_offline.zip`이 생성됩니다.
-3. 생성된 ZIP 전체를 압축 해제한 후 `start_windows.bat`을 실행합니다.
-
-Windows 10/11 x64용 Python과 로컬 설치 패키지를 포함합니다. 자세한 안내는 압축 안의 `docs/OFFLINE_WINDOWS.md`에 있습니다. 기존 runs 폴더는 별도로 백업해서 옮기세요.
+join_files.bat 실행 → 생성된 ZIP 전체 압축 해제 → 위 **최신 v0.12.4 업데이트** 적용 → start_windows.bat 실행.
+Windows 10/11 x64용 Python과 로컬 설치 패키지를 포함합니다. 오프라인 환경에서는 기본 설치본을 매번 다시 받을 필요가 없습니다.
 
 원본 오프라인 ZIP SHA-256:
-
 `38077357d358853468fc020d3099217bf401091bc1eb83d433bc9edb33184398`
 
-## 일반판 다운로드
+## 검증과 이전 변경 기록
 
-[일반판 ZIP 다운로드 — 약 29 MB](https://github.com/younghuni0117-cloud/System_Drop/raw/refs/heads/main/downloads/system_drop_v0.11.0_windows.zip)
+실제 FEM 계산은 Linux CalculiX 2.23에서 시험했습니다. 실제 Windows 실행과 라이선스가 필요한 Abaqus 실행은 이 개발 환경에서 미검증입니다.
+임의 Abaqus 키워드 조합의 지원 범위는 배포본의 docs/TEMPLATE_COMPATIBILITY.md를 확인하세요.
 
-일반판은 필요한 환경이 없으면 인터넷 연결이 필요합니다. 오프라인 PC에서는 위 분할 배포본을 사용하세요.
+- [v0.12.3 Windows 실행 환경·충돌 진단](updates/v0.12.3/CHANGES.md)
+- [v0.12.2 결과창 실행 경로](updates/v0.12.2/CHANGES.md)
+- [v0.12.1 GUI 시작 인수](updates/v0.12.1/CHANGES.md)
+- [v0.12.0 결과창·방향 모식도](updates/v0.12.0/CHANGES.md)
 
-## 검증 범위
-
-- 자동 테스트 170개 통과.
-- Linux CalculiX 2.23에서 새 2재질 모델의 누적 낙하 2회 및 각 안정화 해석 완료.
-- Windows 패키지 의존성 및 해시 검증 완료. **실제 Windows 오프라인 설치와 라이선스가 필요한 Abaqus 실행은 미검증입니다.**
-- Abaqus 템플릿의 지원 범위는 배포본의 `docs/TEMPLATE_COMPATIBILITY.md`를 확인하세요.
-
-배포본에 포함된 CalculiX 및 타사 구성요소의 라이선스·고지는 배포본 안의 관련 문서를 따릅니다.
+배포본의 CalculiX 및 타사 구성요소는 각 라이선스·고지를 따릅니다.

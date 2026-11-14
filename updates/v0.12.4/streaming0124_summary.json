@@ -1,0 +1,22 @@
+{
+  "success": true,
+  "solver_rerun": false,
+  "source_frd_bytes": 178994018,
+  "source_dat_bytes": 344424603,
+  "saved_frames": 6,
+  "arrays_identical_to_previous_converter": 72,
+  "state_identical": true,
+  "raw_files_unchanged": true,
+  "peak_rss_MiB": 69.49609375,
+  "elapsed_s": 36.064662980999856,
+  "progress_events": 527,
+  "mode": {
+    "mode": "streamed_index_then_selected_frames",
+    "raw_frames": 1131,
+    "dat_frames": 1131,
+    "saved_frames": 6,
+    "frd_bytes": 178994018,
+    "dat_bytes": 344424603,
+    "all_raw_values_validated": true
+  }
+}
