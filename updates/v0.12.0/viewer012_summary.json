@@ -1,0 +1,18 @@
+{
+  "success": true,
+  "real_qt_vtk": true,
+  "solver_branding": true,
+  "principal_stresses": true,
+  "max_label": "value with three decimals and units only",
+  "opaque_box_above_leader": true,
+  "range_decimals": 3,
+  "two_play_pause_toggles": true,
+  "stable_playback_geometry": true,
+  "classic_control_middle_region_zoom": true,
+  "white_background": true,
+  "shading_adjustable": true,
+  "feature_lines": true,
+  "all_18_rows_visible": true,
+  "no_new_dependencies": true,
+  "gif_export_stride_2_frames_3": true
+}

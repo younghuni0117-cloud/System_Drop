@@ -1,6 +1,30 @@
 # System Drop
 
-## v0.11.1 — 오프라인 시작 오류 수정
+## v0.12.0 — 결과 창 개선 업데이트
+
+**[v0.12.0 업데이트 ZIP 다운로드 — 약 185 KB](https://github.com/younghuni0117-cloud/System_Drop/raw/refs/heads/main/downloads/system_drop_v0.12.0_update.zip)**
+
+기존 v0.11.0 / v0.11.1에 적용하는 누적 패치입니다. 시작 오류 수정도 포함하므로 이전 패치를 따로 적용할 필요는 없습니다. 새로운 라이브러리나 솔버 설치가 없습니다.
+
+1. Manager와 결과 창을 닫습니다.
+2. 업데이트 ZIP **전체**를 임시 폴더에 압축 해제합니다.
+3. **apply_update.bat**을 실행합니다.
+4. 선택 창에서 **기존 start_windows.bat이 있는 system_drop 폴더**를 선택합니다.
+5. 완료되면 기존 start_windows.bat을 실행합니다.
+
+변경 파일은 backups 폴더에 먼저 백업합니다. 기존 runs·사용자 INP 템플릿·라이브러리·솔버·설정은 유지합니다. Windows 업데이트 BAT/PowerShell은 이 개발 환경에서 실제 실행 미검증입니다. 수동 적용 방법은 [변경 내용](updates/v0.12.0/CHANGES.md)을 참고하세요.
+
+주요 변경: Max 박스/값만 표시, 전체 물리량 이름과 최대·최소 주응력, 입력 폭 개선, 기호 재생/멈춤, 클래식 마우스, 음영 조절·외곽선·흰 배경, 방향 모식도 개선.
+
+자동 테스트 **182개 통과**, 실제 Linux Qt/VTK UI와 GIF 프레임 간격 내보내기 확인. [검증 요약](updates/v0.12.0/viewer012_summary.json).
+
+![결과창](updates/v0.12.0/viewer_v012.png)
+
+![방향 모식도](updates/v0.12.0/directions_v012.png)
+
+---
+
+## 이전 패치 v0.11.1 — v0.12.0에 포함
 
 v0.11.0 실행 중 **No module named 'offline_setup'** 오류가 발생하면 아래 패치를 적용하세요.
 
@@ -10,7 +34,7 @@ v0.11.0 실행 중 **No module named 'offline_setup'** 오류가 발생하면 �
 2. 안의 파일과 폴더를 **기존 start_windows.bat이 있는 system_drop 폴더**에 복사하고 덮어쓰세요.
 3. 기존 폴더를 삭제하지 말고 병합하세요. 다시 start_windows.bat을 실행하세요.
 
-363 MB 배포본을 다시 받을 필요는 없습니다. 라이브러리·솔버·runs는 삭제하거나 강제 재설치하지 않습니다. 처음 설치할 때도 아래 기본 배포본을 받은 뒤 이 패치를 적용하세요.
+363 MB 배포본을 다시 받을 필요는 없습니다. 라이브러리·솔버·runs는 삭제하거나 강제 재설치하지 않습니다. 처음 설치할 때는 아래 기본 배포본을 받은 뒤 최신 v0.12.0 업데이트를 적용하세요.
 
 격리 모드에서 기존 오류 재현 및 수정 확인, 자동 테스트 **174개 통과**. 실제 Windows 실행은 미검증입니다.
 
