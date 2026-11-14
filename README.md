@@ -1,4 +1,22 @@
-# System Drop v0.11.0
+# System Drop
+
+## v0.11.1 — 오프라인 시작 오류 수정
+
+v0.11.0 실행 중 **No module named 'offline_setup'** 오류가 발생하면 아래 패치를 적용하세요.
+
+**[시작 오류 수정 패치 ZIP 다운로드](https://github.com/younghuni0117-cloud/System_Drop/raw/refs/heads/main/downloads/system_drop_v0.11.1_startup_fix.zip)**
+
+1. 패치 ZIP을 임시 폴더에 압축 해제하세요.
+2. 안의 파일과 폴더를 **기존 start_windows.bat이 있는 system_drop 폴더**에 복사하고 덮어쓰세요.
+3. 기존 폴더를 삭제하지 말고 병합하세요. 다시 start_windows.bat을 실행하세요.
+
+363 MB 배포본을 다시 받을 필요는 없습니다. 라이브러리·솔버·runs는 삭제하거나 강제 재설치하지 않습니다. 처음 설치할 때도 아래 기본 배포본을 받은 뒤 이 패치를 적용하세요.
+
+격리 모드에서 기존 오류 재현 및 수정 확인, 자동 테스트 **174개 통과**. 실제 Windows 실행은 미검증입니다.
+
+---
+
+## 기본 배포본 v0.11.0
 
 Windows용 누적 낙하 해석 매니저. CalculiX / Abaqus 템플릿과 PyVista 결과 뷰어를 제공합니다.
 

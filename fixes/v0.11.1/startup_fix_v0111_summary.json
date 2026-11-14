@@ -1,0 +1,6 @@
+{
+  "isolation_reproduction": true,
+  "before_error": "ModuleNotFoundError: No module named 'offline_setup'",
+  "after": "OFFLINE_HELPER_OK",
+  "native_windows_execution": false
+}
