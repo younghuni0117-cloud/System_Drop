@@ -1,0 +1,78 @@
+{
+  "success": true,
+  "real_qt_vtk_children": true,
+  "isolated_python": true,
+  "no_pythonpath": true,
+  "busy_completed_buttons_enabled": true,
+  "independent_process_uninterrupted": true,
+  "launches": [
+    {
+      "arguments": [
+        "/workspace/.venv/bin/python",
+        "-I",
+        "/workspace/system_drop/bootstrap_windows.py",
+        "--viewer",
+        "/tmp/tmpove2db5f/\uc774\ub3d9\ud55c \ud504\ub85c\uadf8\ub7a8 \uacb0\uacfc/drop_01",
+        "--setup",
+        "--screenshot",
+        "/workspace/system_drop/artifacts/viewer_launch0122/viewer_00.png"
+      ],
+      "exit_code": 0,
+      "screenshot": "viewer_00.png"
+    },
+    {
+      "arguments": [
+        "/workspace/.venv/bin/python",
+        "-I",
+        "/workspace/system_drop/bootstrap_windows.py",
+        "--viewer",
+        "/tmp/tmpove2db5f/\uc774\ub3d9\ud55c \ud504\ub85c\uadf8\ub7a8 \uacb0\uacfc/drop_01",
+        "--screenshot",
+        "/workspace/system_drop/artifacts/viewer_launch0122/viewer_01.png"
+      ],
+      "exit_code": 0,
+      "screenshot": "viewer_01.png"
+    },
+    {
+      "arguments": [
+        "/workspace/.venv/bin/python",
+        "-I",
+        "/workspace/system_drop/bootstrap_windows.py",
+        "--viewer",
+        "/tmp/tmpove2db5f/\uc774\ub3d9\ud55c \ud504\ub85c\uadf8\ub7a8 \uacb0\uacfc/release_01",
+        "--screenshot",
+        "/workspace/system_drop/artifacts/viewer_launch0122/viewer_02.png"
+      ],
+      "exit_code": 0,
+      "screenshot": "viewer_02.png"
+    },
+    {
+      "arguments": [
+        "/workspace/.venv/bin/python",
+        "-I",
+        "/workspace/system_drop/bootstrap_windows.py",
+        "--viewer",
+        "/tmp/tmpove2db5f/\uc774\ub3d9\ud55c \ud504\ub85c\uadf8\ub7a8 \uacb0\uacfc",
+        "--screenshot",
+        "/workspace/system_drop/artifacts/viewer_launch0122/viewer_03.png"
+      ],
+      "exit_code": 0,
+      "screenshot": "viewer_03.png"
+    },
+    {
+      "arguments": [
+        "/workspace/.venv/bin/python",
+        "-I",
+        "/workspace/system_drop/bootstrap_windows.py",
+        "--viewer",
+        "/workspace/system_drop/examples/two_material/drop_01",
+        "--example",
+        "--screenshot",
+        "/workspace/system_drop/artifacts/viewer_launch0122/viewer_04.png"
+      ],
+      "exit_code": 0,
+      "screenshot": "viewer_04.png"
+    }
+  ],
+  "native_windows_execution": false
+}

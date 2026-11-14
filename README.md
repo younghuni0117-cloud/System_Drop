@@ -1,6 +1,24 @@
 # System Drop
 
-## v0.12.1 — `unrecognized arguments: --gui` 시작 오류 수정
+## v0.12.2 — 완료 버튼 결과창이 열리지 않는 오류 수정
+
+**[최신 v0.12.2 누적 업데이트 ZIP 다운로드 — 약 193 KB](https://github.com/younghuni0117-cloud/System_Drop/raw/refs/heads/main/downloads/system_drop_v0.12.2_update.zip)**
+
+`ModuleNotFoundError: No module named 'system_drop'`로 결과창이 종료되는 오류를 수정했습니다. 프로그램을 이동하거나 이전 설치의 Python 환경을 재사용할 때에도 현재 프로그램의 결과창을 찾도록 보완했습니다.
+
+1. 해석 중이면 **현재 단계 완료 후 일시정지**하고 실제 대기 상태를 확인합니다.
+2. Manager와 결과창을 닫습니다.
+3. ZIP 전체를 임시 폴더에 풀고 **apply_update.bat** 실행.
+4. **기존 start_windows.bat이 있는 system_drop 폴더** 선택.
+5. 기존 프로그램을 다시 실행하고 필요하면 **이전 실행 폴더 열기 / 재개**로 doe 폴더를 엽니다.
+
+v0.11.0부터 v0.12.1까지 적용할 수 있는 누적 패치입니다. 이전 개선과 수정도 포함하며 라이브러리·솔버를 다시 설치하지 않습니다. 기존 INP·설정·결과는 유지하고 변경 소스만 백업합니다.
+
+자동 테스트 **184개 통과**, 격리 Python에서 실제 Qt/VTK 결과창 5개 경로 기동 확인. 실제 Windows 실행은 미검증입니다. [변경·검증·적용 안내](updates/v0.12.2/CHANGES.md).
+
+---
+
+## 이전 v0.12.1 — 최신 v0.12.2에 포함
 
 **[최신 v0.12.1 누적 업데이트 ZIP 다운로드 — 약 188 KB](https://github.com/younghuni0117-cloud/System_Drop/raw/refs/heads/main/downloads/system_drop_v0.12.1_update.zip)**
 
@@ -51,7 +69,7 @@ v0.11.0 실행 중 **No module named 'offline_setup'** 오류가 발생하면 �
 2. 안의 파일과 폴더를 **기존 start_windows.bat이 있는 system_drop 폴더**에 복사하고 덮어쓰세요.
 3. 기존 폴더를 삭제하지 말고 병합하세요. 다시 start_windows.bat을 실행하세요.
 
-363 MB 배포본을 다시 받을 필요는 없습니다. 라이브러리·솔버·runs는 삭제하거나 강제 재설치하지 않습니다. 처음 설치할 때는 아래 기본 배포본을 받은 뒤 최신 v0.12.1 업데이트를 적용하세요.
+363 MB 배포본을 다시 받을 필요는 없습니다. 라이브러리·솔버·runs는 삭제하거나 강제 재설치하지 않습니다. 처음 설치할 때는 아래 기본 배포본을 받은 뒤 최신 v0.12.2 업데이트를 적용하세요.
 
 격리 모드에서 기존 오류 재현 및 수정 확인, 자동 테스트 **174개 통과**. 실제 Windows 실행은 미검증입니다.
 
