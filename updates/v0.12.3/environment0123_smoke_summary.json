@@ -1,0 +1,17 @@
+{
+  "success": true,
+  "records": [
+    {
+      "setup": "done",
+      "drop": "done",
+      "release": "pending"
+    }
+  ],
+  "cpu": 4,
+  "period_s": 1e-06,
+  "max_increment_s": 1e-05,
+  "production_output_frequency": 1,
+  "new_thread_environment_applied": true,
+  "elapsed_s": 2.616707346998737,
+  "errors": []
+}

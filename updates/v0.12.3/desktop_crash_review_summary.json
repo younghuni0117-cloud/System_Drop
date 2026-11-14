@@ -1,0 +1,52 @@
+{
+  "solver": "Actual Linux CalculiX 2.23",
+  "conditions": "1000 mm Top Face, 0.001 mm gap, 384 C3D8 Aluminum/Plastic",
+  "reports": [
+    {
+      "cpu": 1,
+      "max_increment_s": 1e-05,
+      "period_s": 0.001,
+      "stiffness_threads": 1,
+      "output_frequency_for_diagnosis": 500,
+      "folder": "/workspace/system_drop/artifacts/desktop_crash_review/cpu_1/doe_calculix_261114_r01/drop_01",
+      "return_code": 0,
+      "completed": true,
+      "solver_error_lines": [],
+      "native_time": 0.001,
+      "finite_native_fields": {
+        "co": true,
+        "vold": true,
+        "veold": true,
+        "sti": true,
+        "xstate": true
+      },
+      "max_native_stress_MPa": 18.21975174961476,
+      "final_state_valid": true,
+      "elapsed_s": 117.74601725800312
+    },
+    {
+      "cpu": 4,
+      "max_increment_s": 1e-05,
+      "period_s": 0.001,
+      "stiffness_threads": 1,
+      "output_frequency_for_diagnosis": 500,
+      "folder": "/workspace/system_drop/artifacts/desktop_crash_review/cpu_4/doe_calculix_261114_r01/drop_01",
+      "return_code": 0,
+      "completed": true,
+      "solver_error_lines": [],
+      "native_time": 0.001,
+      "finite_native_fields": {
+        "co": true,
+        "vold": true,
+        "veold": true,
+        "sti": true,
+        "xstate": true
+      },
+      "max_native_stress_MPa": 18.219751749570328,
+      "final_state_valid": true,
+      "elapsed_s": 126.44888241300214
+    }
+  ],
+  "windows_crash_reproduced": false,
+  "limitation": "Diagnostic output frequency=500 instead of production frequency=1, to avoid gigabytes of output. Cannot validate the Windows executable with this Linux test."
+}

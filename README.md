@@ -1,6 +1,25 @@
 # System Drop
 
-## v0.12.2 — 완료 버튼 결과창이 열리지 않는 오류 수정
+## v0.12.3 — CalculiX Windows 실행 환경·충돌 진단
+
+**[최신 v0.12.3 누적 업데이트 ZIP 다운로드 — 약 199 KB](https://github.com/younghuni0117-cloud/System_Drop/raw/refs/heads/main/downloads/system_drop_v0.12.3_update.zip)**
+
+동봉 Windows 솔버의 원본 시작 환경에서 지정한 **강성 조립 스레드 1개** 설정을 반영했습니다. 결과 계산 CPU 수는 GUI 값을 사용합니다. 기본 CPU 4개는 유지합니다.
+
+Windows 접근 위반(0xC0000005) 등을 구분하고, 실패한 단계에 **solver_failure_report.json**을 저장합니다. 이 파일에는 조건·실제 스레드 설정·입력과 실행 파일/DLL 해시·마지막 시간·출력 크기를 기록합니다.
+
+**사용자의 Windows 접근 위반 원인은 아직 확정하지 못했습니다.** Linux에서 같은 최대 증분 0.00001초 / 종료 0.001초를 CPU 1개·4개로 완료했지만, 장시간 시험은 출력 빈도를 줄인 진단용이며 Windows 실행 파일 검증을 대신하지 않습니다.
+
+1. Manager와 결과창을 닫습니다. 다른 계산이 진행 중이면 현재 단계 완료 후 일시정지합니다.
+2. ZIP 전체를 임시 폴더에 풀고 apply_update.bat 실행 → 기존 start_windows.bat 폴더 선택.
+3. 다시 실행 → 이전 실행 폴더 열기 / 재개 → **CPU 1개로 변경**.
+4. 다른 조건을 유지하고 실패한 낙하만 다시 계산합니다. 완료된 단계는 유지합니다.
+
+자동 테스트 **189개 통과**. [변경 내용·비교 시험·검증 범위](updates/v0.12.3/CHANGES.md). 새 라이브러리/솔버 설치는 없고 이전 패치도 모두 포함합니다.
+
+---
+
+## 이전 v0.12.2 — 최신 패치에 포함
 
 **[최신 v0.12.2 누적 업데이트 ZIP 다운로드 — 약 193 KB](https://github.com/younghuni0117-cloud/System_Drop/raw/refs/heads/main/downloads/system_drop_v0.12.2_update.zip)**
 
@@ -69,7 +88,7 @@ v0.11.0 실행 중 **No module named 'offline_setup'** 오류가 발생하면 �
 2. 안의 파일과 폴더를 **기존 start_windows.bat이 있는 system_drop 폴더**에 복사하고 덮어쓰세요.
 3. 기존 폴더를 삭제하지 말고 병합하세요. 다시 start_windows.bat을 실행하세요.
 
-363 MB 배포본을 다시 받을 필요는 없습니다. 라이브러리·솔버·runs는 삭제하거나 강제 재설치하지 않습니다. 처음 설치할 때는 아래 기본 배포본을 받은 뒤 최신 v0.12.2 업데이트를 적용하세요.
+363 MB 배포본을 다시 받을 필요는 없습니다. 라이브러리·솔버·runs는 삭제하거나 강제 재설치하지 않습니다. 처음 설치할 때는 아래 기본 배포본을 받은 뒤 최신 v0.12.3 업데이트를 적용하세요.
 
 격리 모드에서 기존 오류 재현 및 수정 확인, 자동 테스트 **174개 통과**. 실제 Windows 실행은 미검증입니다.
 
