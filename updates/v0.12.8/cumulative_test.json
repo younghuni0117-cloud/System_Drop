@@ -1,0 +1,94 @@
+{
+  "success": true,
+  "scope": "Linux CCX 2.23 short two-impact/native-stabilization linkage test, not a complete drop validation",
+  "run": "/workspace/system_drop/artifacts/output0128/cumulative/doe_calculix_261116_r01",
+  "elapsed_seconds": 6.5591559980002785,
+  "records": [
+    {
+      "setup": "done",
+      "drop": "done",
+      "release": "done"
+    },
+    {
+      "setup": "done",
+      "drop": "done",
+      "release": "done"
+    }
+  ],
+  "errors": [],
+  "stages": [
+    {
+      "stage": "drop_01",
+      "plan": {
+        "version": 1,
+        "stage": "drop",
+        "period": 1e-06,
+        "interval": 1e-06,
+        "requested_interval": 1e-06,
+        "target_frames": 1,
+        "max_saved_frames": 1000,
+        "frequency": 10,
+        "mode": "automatic",
+        "reference_increment": 1e-07,
+        "allow_sparse": true,
+        "note": "Increment-based CCX recording; actual frame count/spacing depends on adaptive integration. Native restart retains full final material state."
+      },
+      "frames": 1
+    },
+    {
+      "stage": "drop_02",
+      "plan": {
+        "version": 1,
+        "stage": "drop",
+        "period": 1e-06,
+        "interval": 1e-06,
+        "requested_interval": 1e-06,
+        "target_frames": 1,
+        "max_saved_frames": 1000,
+        "frequency": 10,
+        "mode": "automatic",
+        "reference_increment": 1e-07,
+        "allow_sparse": true,
+        "note": "Increment-based CCX recording; actual frame count/spacing depends on adaptive integration. Native restart retains full final material state."
+      },
+      "frames": 1
+    },
+    {
+      "stage": "release_01",
+      "plan": {
+        "version": 1,
+        "stage": "release",
+        "period": 1e-06,
+        "interval": 5e-07,
+        "requested_interval": 5e-07,
+        "target_frames": 2,
+        "max_saved_frames": 1000,
+        "frequency": 5,
+        "mode": "automatic",
+        "reference_increment": 1e-07,
+        "allow_sparse": true,
+        "note": "Increment-based CCX recording; actual frame count/spacing depends on adaptive integration. Native restart retains full final material state."
+      },
+      "frames": 2
+    },
+    {
+      "stage": "release_02",
+      "plan": {
+        "version": 1,
+        "stage": "release",
+        "period": 1e-06,
+        "interval": 5e-07,
+        "requested_interval": 5e-07,
+        "target_frames": 2,
+        "max_saved_frames": 1000,
+        "frequency": 5,
+        "mode": "automatic",
+        "reference_increment": 1e-07,
+        "allow_sparse": true,
+        "note": "Increment-based CCX recording; actual frame count/spacing depends on adaptive integration. Native restart retains full final material state."
+      },
+      "frames": 2
+    }
+  ],
+  "second_drop_native_history_preserved": true
+}

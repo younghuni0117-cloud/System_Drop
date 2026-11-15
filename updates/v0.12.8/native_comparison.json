@@ -1,0 +1,54 @@
+{
+  "success": true,
+  "solver": "Linux CalculiX 2.23",
+  "cases": [
+    {
+      "mode": "every_increment",
+      "frequency": 1,
+      "folder": "/workspace/system_drop/artifacts/output0128/every_increment/doe_calculix_261116_r01/drop_01",
+      "frd_bytes": 24120134,
+      "dat_bytes": 46288754,
+      "frames": 6,
+      "conversion_seconds": 5.482370468999761,
+      "solver_seconds": 6.748449081000217
+    },
+    {
+      "mode": "automatic",
+      "frequency": 10,
+      "folder": "/workspace/system_drop/artifacts/output0128/automatic/doe_calculix_261116_r01/drop_01",
+      "frd_bytes": 2605478,
+      "dat_bytes": 4872538,
+      "frames": 6,
+      "conversion_seconds": 0.858083367999825,
+      "solver_seconds": 5.156672081000579
+    }
+  ],
+  "native_records": {
+    "co": {
+      "identical": true,
+      "values": 2109
+    },
+    "vold": {
+      "identical": true,
+      "values": 2812
+    },
+    "veold": {
+      "identical": true,
+      "values": 2812
+    },
+    "sti": {
+      "identical": true,
+      "values": 110970
+    },
+    "xstate": {
+      "identical": true,
+      "values": 1183923
+    },
+    "ttime": {
+      "identical": true,
+      "values": 1
+    }
+  },
+  "raw_bytes_reduction_percent": 89.37915906298647,
+  "scope": "Short actual Top Face impact; output-only change; no full-duration/Windows performance claim."
+}

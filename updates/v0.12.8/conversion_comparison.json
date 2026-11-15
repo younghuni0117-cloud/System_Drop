@@ -1,0 +1,10 @@
+{
+  "success": true,
+  "source_bytes": 70408888,
+  "frames": 6,
+  "arrays_identical": 72,
+  "final_state_identical": true,
+  "numeric_validation_all_raw_values": true,
+  "elapsed_seconds": 3.407400262999545,
+  "baseline_elapsed_seconds": 5.482370468999761
+}
