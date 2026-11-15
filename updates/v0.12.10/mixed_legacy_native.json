@@ -1,0 +1,24 @@
+{
+  "success": true,
+  "scope": "Reuse unchanged historical job-based first drop/release; execute next direct-main drop/release",
+  "run": "/workspace/system_drop/artifacts/three0130/mixed/doe_calculix_261116_r01",
+  "errors": [],
+  "records": [
+    {
+      "setup": "done",
+      "drop": "done",
+      "release": "done"
+    },
+    {
+      "setup": "done",
+      "drop": "done",
+      "release": "done"
+    }
+  ],
+  "native_history_preserved": true,
+  "new_step_inputs": [
+    "calculix_main.inp",
+    "calculix_material.inp",
+    "calculix_mesh.inp"
+  ]
+}
