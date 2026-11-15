@@ -1,0 +1,34 @@
+{
+  "success": true,
+  "real_qt_setup": true,
+  "abaqus_installed": false,
+  "missing_solver_does_not_modify_generated_input": true,
+  "run": "/workspace/system_drop/artifacts/abaqus0125_ui/doe_abaqus_261116_r02",
+  "settings": {
+    "passed": true,
+    "actual_input": "abaqus_main.inp",
+    "includes": [
+      "abaqus_material.inp",
+      "abaqus_mesh.inp"
+    ],
+    "expected": {
+      "period_s": 0.001,
+      "maximum_increment_s": 1e-05
+    },
+    "actual": {
+      "period_s": 0.001,
+      "maximum_increment_s": 1e-05,
+      "output_requests": [
+        {
+          "FIELD": true,
+          "TIME INTERVAL": "0.00001"
+        },
+        {
+          "HISTORY": true,
+          "TIME INTERVAL": "0.00001"
+        }
+      ]
+    },
+    "errors": []
+  }
+}
