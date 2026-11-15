@@ -1,0 +1,223 @@
+{
+  "success": true,
+  "scope": "Linux CalculiX 2.23 short 2-direction native workflow through job.inp INCLUDE calculix_main.inp",
+  "run": "/workspace/system_drop/artifacts/input0129/doe_calculix_261116_r01",
+  "elapsed_seconds": 7.635165667000365,
+  "records": [
+    {
+      "setup": "done",
+      "drop": "done",
+      "release": "done"
+    },
+    {
+      "setup": "done",
+      "drop": "done",
+      "release": "done"
+    }
+  ],
+  "errors": [],
+  "input_reports": [
+    {
+      "folder": "drop_01",
+      "passed": true,
+      "solver": "calculix",
+      "stage": "drop",
+      "actual_input": "job.inp",
+      "model_input": "calculix_main.inp",
+      "expected": {
+        "initial_increment_s": 1e-07,
+        "period_s": 1e-06,
+        "minimum_increment_s": 1e-12,
+        "maximum_increment_s": 5e-07
+      },
+      "actual": {
+        "initial_increment_s": 1e-07,
+        "period_s": 1e-06,
+        "minimum_increment_s": 1e-12,
+        "maximum_increment_s": 5e-07
+      },
+      "procedure": {
+        "EXPLICIT": "2"
+      },
+      "output_requests": [
+        {
+          "OUTPUT": "2D",
+          "FREQUENCY": "5"
+        },
+        {
+          "OUTPUT": "2D",
+          "FREQUENCY": "5"
+        },
+        {
+          "GLOBAL": "YES",
+          "ELSET": "PRODUCT_ELEMENTS",
+          "FREQUENCY": "5"
+        },
+        {
+          "NSET": "FRAME_ORIGIN",
+          "FREQUENCY": "5"
+        }
+      ],
+      "errors": [],
+      "time_field_meanings": [
+        "initial increment (Explicit auto ignores this reference)",
+        "step period",
+        "minimum increment",
+        "maximum increment"
+      ],
+      "note": "Actual increments depend on the solver automatic procedure. Viewer frame spacing and cumulative time are not these input settings."
+    },
+    {
+      "folder": "release_01",
+      "passed": true,
+      "solver": "calculix",
+      "stage": "release",
+      "actual_input": "job.inp",
+      "model_input": "calculix_main.inp",
+      "expected": {
+        "initial_increment_s": 1e-07,
+        "period_s": 1e-06,
+        "minimum_increment_s": 1e-10,
+        "maximum_increment_s": 5e-07
+      },
+      "actual": {
+        "initial_increment_s": 1e-07,
+        "period_s": 1e-06,
+        "minimum_increment_s": 1e-10,
+        "maximum_increment_s": 5e-07
+      },
+      "procedure": {
+        "ALPHA": "-0.3"
+      },
+      "output_requests": [
+        {
+          "OUTPUT": "2D",
+          "FREQUENCY": "5"
+        },
+        {
+          "OUTPUT": "2D",
+          "FREQUENCY": "5"
+        },
+        {
+          "GLOBAL": "YES",
+          "ELSET": "AUTO_PRODUCT_ELEMENTS",
+          "FREQUENCY": "5"
+        },
+        {
+          "NSET": "FRAME_ORIGIN",
+          "FREQUENCY": "5"
+        }
+      ],
+      "errors": [],
+      "time_field_meanings": [
+        "initial increment",
+        "step period",
+        "minimum increment",
+        "maximum increment"
+      ],
+      "note": "Actual increments depend on the solver automatic procedure. Viewer frame spacing and cumulative time are not these input settings."
+    },
+    {
+      "folder": "drop_02",
+      "passed": true,
+      "solver": "calculix",
+      "stage": "drop",
+      "actual_input": "job.inp",
+      "model_input": "calculix_main.inp",
+      "expected": {
+        "initial_increment_s": 1e-07,
+        "period_s": 1e-06,
+        "minimum_increment_s": 1e-12,
+        "maximum_increment_s": 5e-07
+      },
+      "actual": {
+        "initial_increment_s": 1e-07,
+        "period_s": 1e-06,
+        "minimum_increment_s": 1e-12,
+        "maximum_increment_s": 5e-07
+      },
+      "procedure": {
+        "EXPLICIT": "2"
+      },
+      "output_requests": [
+        {
+          "OUTPUT": "2D",
+          "FREQUENCY": "5"
+        },
+        {
+          "OUTPUT": "2D",
+          "FREQUENCY": "5"
+        },
+        {
+          "GLOBAL": "YES",
+          "ELSET": "AUTO_PRODUCT_ELEMENTS",
+          "FREQUENCY": "5"
+        },
+        {
+          "NSET": "FRAME_ORIGIN",
+          "FREQUENCY": "5"
+        }
+      ],
+      "errors": [],
+      "time_field_meanings": [
+        "initial increment (Explicit auto ignores this reference)",
+        "step period",
+        "minimum increment",
+        "maximum increment"
+      ],
+      "note": "Actual increments depend on the solver automatic procedure. Viewer frame spacing and cumulative time are not these input settings."
+    },
+    {
+      "folder": "release_02",
+      "passed": true,
+      "solver": "calculix",
+      "stage": "release",
+      "actual_input": "job.inp",
+      "model_input": "calculix_main.inp",
+      "expected": {
+        "initial_increment_s": 1e-07,
+        "period_s": 1e-06,
+        "minimum_increment_s": 1e-10,
+        "maximum_increment_s": 5e-07
+      },
+      "actual": {
+        "initial_increment_s": 1e-07,
+        "period_s": 1e-06,
+        "minimum_increment_s": 1e-10,
+        "maximum_increment_s": 5e-07
+      },
+      "procedure": {
+        "ALPHA": "-0.3"
+      },
+      "output_requests": [
+        {
+          "OUTPUT": "2D",
+          "FREQUENCY": "5"
+        },
+        {
+          "OUTPUT": "2D",
+          "FREQUENCY": "5"
+        },
+        {
+          "GLOBAL": "YES",
+          "ELSET": "AUTO_PRODUCT_ELEMENTS",
+          "FREQUENCY": "5"
+        },
+        {
+          "NSET": "FRAME_ORIGIN",
+          "FREQUENCY": "5"
+        }
+      ],
+      "errors": [],
+      "time_field_meanings": [
+        "initial increment",
+        "step period",
+        "minimum increment",
+        "maximum increment"
+      ],
+      "note": "Actual increments depend on the solver automatic procedure. Viewer frame spacing and cumulative time are not these input settings."
+    }
+  ],
+  "native_material_history_preserved": true,
+  "actual_final_total_time": 4e-06
+}
