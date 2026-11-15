@@ -1,0 +1,55 @@
+{
+  "success": true,
+  "native_set_checks": [
+    {
+      "stage": "drop_01",
+      "template_node_set_present": true,
+      "template_element_set_present": true,
+      "auto_product_sets_present": false
+    },
+    {
+      "stage": "release_01",
+      "template_node_set_present": true,
+      "template_element_set_present": true,
+      "auto_product_sets_present": false
+    },
+    {
+      "stage": "drop_02",
+      "template_node_set_present": true,
+      "template_element_set_present": true,
+      "auto_product_sets_present": false
+    },
+    {
+      "stage": "release_02",
+      "template_node_set_present": true,
+      "template_element_set_present": true,
+      "auto_product_sets_present": false
+    }
+  ],
+  "first_drop_physical_state_identical_to_previous_auto_sets_run": {
+    "co": {
+      "exactly_identical": true,
+      "values": 2109
+    },
+    "vold": {
+      "exactly_identical": true,
+      "values": 2812
+    },
+    "veold": {
+      "exactly_identical": true,
+      "values": 2812
+    },
+    "sti": {
+      "exactly_identical": true,
+      "values": 110970
+    },
+    "xstate": {
+      "exactly_identical": true,
+      "values": 1183923
+    },
+    "ttime": {
+      "exactly_identical": true,
+      "values": 1
+    }
+  }
+}

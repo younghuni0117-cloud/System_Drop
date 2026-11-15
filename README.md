@@ -3,22 +3,25 @@
 Windows용 누적 낙하 해석 Manager. CalculiX / Abaqus 입력과 PyVista 결과창을 제공합니다.
 배포는 **기본 오프라인 설치본 + 작은 누적 업데이트** 방식입니다.
 
-## 최신 v0.12.11 업데이트 — 낙하 순번·단계별 CalculiX 결과 파일명
+## 최신 v0.12.12 업데이트 — 템플릿 제품 집합 정의 유지
 
-**[v0.12.11 누적 업데이트 ZIP 다운로드 · 약 263 KB](https://github.com/younghuni0117-cloud/System_Drop/raw/refs/heads/main/downloads/system_drop_v0.12.11_update.zip)**
+**[v0.12.12 누적 업데이트 ZIP 다운로드 · 약 267 KB](https://github.com/younghuni0117-cloud/System_Drop/raw/refs/heads/main/downloads/system_drop_v0.12.12_update.zip)**
 
-완료 결과는 **drop_01_drop.frd / drop_01_release.frd / drop_02_drop.frd**처럼 저장합니다.
-DAT/STA/native 결과에도 같은 접두어를 적용합니다. 번호는 낙하 순번이며 01, 02, 03처럼 두 자리부터 사용합니다.
-main/material/mesh 3개 INP는 유지합니다. 계산 중에는 솔버가 calculix_main.*로 기록하고 정상 종료 직후 단계별 이름으로 변경합니다.
-변환과 다음 낙하의 native 상태 전달은 변경된 이름에 연결합니다. calculix_main.rin은 재시작 입력이므로 이름을 유지합니다.
+CalculiX/Abaqus 모두 **템플릿 mesh의 PRODUCT_NODES / PRODUCT_ELEMENTS**를 사용합니다.
+AUTO_PRODUCT_* 집합을 추가하지 않으며 기존 제품 집합을 자동 확장·재생성하지 않습니다.
+GENERATE와 하위 집합 참조 등 기존 정의를 유지합니다. 집합이 없거나 범위가 제품 전체와 다르면 원본 템플릿을 확인하도록 안내합니다.
+마커 없는 Abaqus와 Assembly의 기존 제품 집합도 대응시켜 사용합니다.
 
 1. 현재 단계 완료 후 Manager와 결과창을 닫습니다.
 2. ZIP 전체를 임시 폴더에 풀고 apply_update.bat으로 기존 설치를 선택합니다.
-3. 새 해석 완료 후 단계 폴더의 결과 파일명을 확인합니다.
+3. 새 실행에서 main의 PRODUCT_* 참조 및 첫 낙하 mesh의 기존 집합 정의를 확인합니다.
 
-기존 완료 결과의 이름은 소급 변경하지 않습니다. 기존 템플릿·runs·라이브러리·솔버를 보존하며 추가 패키지는 없습니다.
-자동 테스트 **233개 통과**, Linux CalculiX 2.23 실제 짧은 2방향 누적 해석과 새 이름 결과의 재계산 없는 재변환을 확인했습니다.
-[파일명 규칙·완료 시 처리·검증](updates/v0.12.11/CHANGES.md).
+main/material/mesh 3개 INP, GUI 시간 설정, drop_01_drop.frd 등의 결과명은 유지합니다.
+기존 완료 입력과 native 상태를 소급 변경하지 않습니다. 템플릿·runs·라이브러리·솔버를 보존하며 추가 패키지는 없습니다.
+자동 테스트 **244개 통과**. Linux CalculiX 2.23 짧은 2방향 누적 해석에서 AUTO_PRODUCT_* 미생성과 템플릿 집합 계승을 확인했습니다.
+첫 낙하의 최종 변형·속도·응력·소성 상태도 이전 AUTO 집합 방식과 완전히 동일했습니다.
+Windows 및 Abaqus 라이선스 실행은 이번 실제 검증에 포함하지 않았습니다.
+[템플릿 보존 범위·집합 오류 안내·검증](updates/v0.12.12/CHANGES.md).
 
 ## 최초 오프라인 설치 — 기본 v0.11.0
 
@@ -32,7 +35,7 @@ GitHub 단일 파일 제한에 맞춘 363MB 원본 ZIP의 분할 파일입니다
 - [분할 5 다운로드](https://github.com/younghuni0117-cloud/System_Drop/raw/refs/heads/main/downloads/system_drop_offline.zip.part005)
 - [join_files.bat 다운로드](https://github.com/younghuni0117-cloud/System_Drop/raw/refs/heads/main/downloads/join_files.bat)
 
-join_files.bat 실행 → 생성된 ZIP 전체 압축 해제 → 위 **최신 v0.12.11 업데이트** 적용 → start_windows.bat 실행.
+join_files.bat 실행 → 생성된 ZIP 전체 압축 해제 → 위 **최신 v0.12.12 업데이트** 적용 → start_windows.bat 실행.
 Windows 10/11 x64용 Python과 로컬 설치 패키지를 포함합니다. 오프라인 환경에서는 기본 설치본을 매번 다시 받을 필요가 없습니다.
 
 원본 오프라인 ZIP SHA-256:
