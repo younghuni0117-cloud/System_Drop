@@ -1,0 +1,7 @@
+{
+  "success": true,
+  "scope": "Actual Windows wheel file restoration tested on Linux; Windows DLL loading not verified",
+  "repaired_files": 115,
+  "second_check_writes": 0,
+  "core_extension_matches_wheel": true
+}
